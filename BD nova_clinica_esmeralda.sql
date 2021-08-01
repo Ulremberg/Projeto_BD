@@ -1,6 +1,3 @@
-
-
-
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
@@ -218,8 +215,7 @@ CREATE TABLE IF NOT EXISTS `nova_clinica_esmeralda`.`agendamento` (
   `data_agendamento` DATETIME NOT NULL,
   `hora_agendamento` TIME NOT NULL, 
   `status_agendamento`SET('confirmado','aguardando') NOT NULL,
-  PRIMARY KEY (`cpf_secretaria`,`cpf_paciente`,`cpf_dentista`,`data_agendamento`,`hora_agendamento`),
-   -- UNIQUE INDEX `cpf_secretaria`(`cpf_paciente`,`cpf_dentista`, `cpf_secretaria`),
+  PRIMARY KEY (`cpf_secretaria`,`cpf_paciente`,`cpf_dentista`,`data_agendamento`,`hora_agendamento`),   
     FOREIGN KEY (`cpf_secretaria`)
     REFERENCES `nova_clinica_esmeralda`.`secretaria` (`cpf_secretaria`)
     ON DELETE NO ACTION
@@ -368,14 +364,6 @@ CREATE TABLE IF NOT EXISTS `nova_clinica_esmeralda`.`med_possui_horario` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
-
-
-
-
-
-
-
-
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
