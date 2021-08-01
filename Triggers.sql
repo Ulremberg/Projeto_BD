@@ -26,19 +26,3 @@ BEGIN
 END; $$
 
 
-DELIMITER $$
-CREATE TRIGGER IdadePacientes
-BEFORE INSERT ON paciente
-FOR EACH ROW
-BEGIN
-	-- DECLARE idade int;
-    DECLARE aniver DATE;
-    DECLARE cpf_paciente1 int;
-    SELECT new.cpf_paciente INTO cpf_paciente1;
-    SELECT pessoa.data_Nascimento into aniver FROM pessoa WHERE cpf = cpf_paciente1;
-    -- UPDATE paciente
-	SET new.idade = TIMESTAMPDIFF(YEAR, aniver, NOW());     
-END;$$
-
-
-
