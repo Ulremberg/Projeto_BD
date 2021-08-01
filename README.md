@@ -1,3 +1,3 @@
 # Projeto_BD
 
-⋅⋅*Sistema de uma clínica odontológica
+⋅⋅*Sistema de uma clínica odontológica.
